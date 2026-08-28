@@ -17,22 +17,13 @@ public abstract class Foods : Goods
     {
         Price = BasePrice;
     }
-
-    public void Addgood()
+    public void PlusGood()
     {
         Count++;
     }
-
-    public void Removegood()
+    public void MinusGood()
     {
-        if (Count != 0)
-        {
-            Count--;
-        }
-        else
-        {
-            Console.WriteLine("카트에 해당 물품이 없습니다");
-        }
+        Count--;
     }
     
 }

@@ -7,11 +7,29 @@ public class ShoppingCart<T> where T : Goods
 
     public void Add(T goods)
     {
-        Cart.Add(goods);
+        if (Cart.Contains(goods))
+        {
+            goods.PlusGood();
+        }
+        else
+        {
+            Cart.Add(goods);
+        }
     }
 
     public void Remove(T goods)
     {
-        Cart.Remove(goods);
+        if (Cart.Contains(goods))
+        {
+            goods.MinusGood();
+            if (Cart.Count == 0)
+            {
+                Cart.Remove(goods);
+            }
+        }
+        else
+        {
+            Console.WriteLine("장바구니에 없는 물건입니다");
+        }
     }
 }

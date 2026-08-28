@@ -8,6 +8,6 @@ public interface Goods
     protected int Count { get; set; }
 
     public void CalPrice();
-    public void Addgood();
-    public void Removegood();
+    public void PlusGood();
+    public void MinusGood();
 }
