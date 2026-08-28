@@ -12,12 +12,14 @@ public class Electronics : Goods
     public string Name { get; set; }
     public int BasePrice { get; set; }
     public int Price { get; set; }
+    public int Count {get; set;}
 
     Electronics(string name, int baseprice, ListElectronics electron)
     {
         Name = name;
         BasePrice = baseprice;
         Electron = electron;
+        Count = 0;
     }
     public void CalPrice()
     {
