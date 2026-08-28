@@ -7,10 +7,9 @@ class Program
         List<Goods> cart = new List<Goods>();
         List<Goods> shop = new List<Goods>();
         
-        Drinks coke = new Drinks("콜라", 1000, Drinks.ListDrinks.Coke);
-        Drinks cider = new Drinks("사이다", 1000, Drinks.ListDrinks.Cider);
-        Drinks juice = new Drinks("주스",1500, Drinks.ListDrinks.Juice);
-        Drinks coffee = new Drinks("커피",2000 , Drinks.ListDrinks.Coffee);
+        Drinks coke = new Drinks(Drinks.ListDrinks.Coke);
+        Drinks cider = new Drinks(Drinks.ListDrinks.Cider);
+        Drinks coffee = new Drinks(Drinks.ListDrinks.Coffee);
         Snacks chips = new Snacks("감자칩", 2000, Snacks.ListSnack.Chips);
         Snacks candy = new Snacks("사탕",500,Snacks.ListSnack.Candy);
         Snacks choco = new Snacks("초콜릿",3000,Snacks.ListSnack.Chocolate);

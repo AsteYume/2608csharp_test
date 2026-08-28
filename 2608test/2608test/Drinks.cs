@@ -6,23 +6,39 @@ public class Drinks : Foods
     {
         Coke,
         Cider,
-        Juice,
         Coffee
     }
 
     public ListDrinks Drink {get; protected set;}
     public bool IsThisSale {get; protected set;}
+    private static string _drinkName = "";
+    private static int _drinkPrice = 0;
+    
+    
     private const int DRINK_SALE = 30;
     
     
-    public Drinks(string name, int baseprice, ListDrinks drink) : base(name, baseprice) 
+    public Drinks(ListDrinks drink) : base(_drinkName, _drinkPrice) 
     {
         Drink = drink;
-        if (drink == ListDrinks.Coke
-            || drink == ListDrinks.Cider) // 이거 서로 다른 열거형에서 이름 일치하는지 비교 하는법 없나?
+        if (drink == ListDrinks.Coke)
+        {
+            _drinkName = "콜라";
+            _drinkPrice = 1000;
+            IsThisSale = true; // 열거형 두개에서 이름 일치하나 비교하는법 없나
+        }
+        else if (drink == ListDrinks.Cider)
+        {
+            _drinkName = "사이다";
+            _drinkPrice = 1000;
             IsThisSale = true;
-        else 
+        }
+        else if (drink == ListDrinks.Coffee)
+        {
+            _drinkName = "커피";
+            _drinkPrice = 1500;
             IsThisSale = false;
+        }
     }
 
     public override void CalPrice()
