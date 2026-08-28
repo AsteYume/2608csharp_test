@@ -11,8 +11,11 @@ public class Drinks : Foods
     }
 
     public DrinkList Drink {get; protected set;}
+    public bool IsThisSale {get; protected set;}
+    private const int SALE_RATE = 30;
     
-    public Drinks(string name, int price, DrinkList drink) : base(name, price) 
+    
+    public Drinks(string name, int baseprice, DrinkList drink) : base(name, baseprice) 
     {
         Drink = drink;
         if (drink == DrinkList.Coke
@@ -22,6 +25,13 @@ public class Drinks : Foods
 
     public override void CalPrice()
     {
-        base.CalPrice();
+        if (IsThisSale)
+        {
+            Price = (BasePrice * (100-SALE_RATE))/100;
+        }
+        else
+        {
+            base.CalPrice();
+        }
     }
 }
