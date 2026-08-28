@@ -1,15 +1,15 @@
 ﻿namespace _2608test;
 
-public class ShoppingCart<T> where T : Goods
+public partial class GoodsIndex<T> where T : Goods
 {
     List<Goods> Cart = new List<Goods>();
 
 
-    public void Add(T goods)
+    public void AddCart(T goods)
     {
         if (Cart.Contains(goods))
         {
-            goods.PlusGood();
+            goods.AddGood();
         }
         else
         {
@@ -17,11 +17,11 @@ public class ShoppingCart<T> where T : Goods
         }
     }
 
-    public void Remove(T goods)
+    public void RemoveCart(T goods)
     {
         if (Cart.Contains(goods))
         {
-            goods.MinusGood();
+            goods.RemoveGood();
             if (Cart.Count == 0)
             {
                 Cart.Remove(goods);

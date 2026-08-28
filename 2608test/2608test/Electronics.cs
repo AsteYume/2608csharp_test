@@ -5,7 +5,7 @@ public class Electronics : Goods
     public enum ListElectronics
     {
         Battery,
-        Code
+        Cable
     }
     public ListElectronics Electron {get; protected set;}
     
@@ -14,7 +14,7 @@ public class Electronics : Goods
     public int Price { get; set; }
     public int Count {get; set;}
 
-    Electronics(string name, int baseprice, ListElectronics electron)
+    public Electronics(string name, int baseprice, ListElectronics electron)
     {
         Name = name;
         BasePrice = baseprice;
@@ -25,11 +25,11 @@ public class Electronics : Goods
     {
         Price = BasePrice;
     }
-    public void PlusGood()
+    public void AddGood()
     {
         Count++;
     }
-    public void MinusGood()
+    public void RemoveGood()
     {
         Count--;
     }

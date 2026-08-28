@@ -1,8 +1,8 @@
 ﻿namespace _2608test;
 
-public class ShopMenu<T> where T : Goods
+public partial class GoodsIndex<T> where T : Goods
 {
-    List<Goods> Shop = new List<Goods>();
+    
     
     
     

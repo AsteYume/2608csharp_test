@@ -17,11 +17,11 @@ public abstract class Foods : Goods
     {
         Price = BasePrice;
     }
-    public void PlusGood()
+    public void AddGood()
     {
         Count++;
     }
-    public void MinusGood()
+    public void RemoveGood()
     {
         Count--;
     }
