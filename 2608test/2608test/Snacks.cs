@@ -2,23 +2,23 @@
 
 public class Snacks : Foods
 {
-    public enum SnackList
+    public enum ListSnack
     {
         Chips,
         Chocolate,
         Candy,
         Cookie
     }
-    public SnackList Snack {get; protected set;}
+    public ListSnack Snack {get; protected set;}
     public bool IsThisSale {get; protected set;}
     private const int SNACK_SALE = 20;
     
     
-    public Snacks(string name, int baseprice, SnackList snack) : base(name, baseprice) 
+    public Snacks(string name, int baseprice, ListSnack snack) : base(name, baseprice) 
     {
         Snack = snack;
-        if (snack == SnackList.Chips
-            || snack == SnackList.Chocolate) // 이거 서로 다른 열거형에서 이름 일치하는지 비교 하는법 없나?
+        if (snack == ListSnack.Chips
+            || snack == ListSnack.Chocolate) // 이거 서로 다른 열거형에서 이름 일치하는지 비교 하는법 없나?
             IsThisSale = true;
         else 
             IsThisSale = false;

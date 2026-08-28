@@ -2,5 +2,10 @@
 
 public class Electronics : Goods
 {
+    public enum ListElectronics
+    {
+        Battery,
+        Code
+    }
     
 }
