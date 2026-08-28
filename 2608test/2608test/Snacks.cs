@@ -2,26 +2,48 @@
 
 public class Snacks : Foods
 {
-    public enum ListSnack
+    public enum ListSnacks
     {
         Chips,
         Chocolate,
         Candy,
         Cookie
     }
-    public ListSnack Snack {get; protected set;}
+    public ListSnacks Snack {get; protected set;}
     public bool IsThisSale {get; protected set;}
+    
     private const int SNACK_SALE = 20;
     
+    private static string _snackName = "";
+    private static int _snackPrice = 0;
     
-    public Snacks(string name, int baseprice, ListSnack snack) : base(name, baseprice) 
+    public Snacks(ListSnacks snack) : base(_snackName, _snackPrice) 
     {
         Snack = snack;
-        if (snack == ListSnack.Chips
-            || snack == ListSnack.Chocolate) // 이거 서로 다른 열거형에서 이름 일치하는지 비교 하는법 없나?
+        if (snack == ListSnacks.Chips)
+        {
+            _snackName = "감자칩";
+            _snackPrice = 2000;
             IsThisSale = true;
-        else 
+        }
+        else if (snack == ListSnacks.Chocolate)
+        {
+            _snackName = "초콜릿";
+            _snackPrice = 3000;
+            IsThisSale = true;
+        }
+        else if (snack == ListSnacks.Candy)
+        {
+            _snackName = "사탕";
+            _snackPrice = 500;
             IsThisSale = false;
+        }
+        else if (snack == ListSnacks.Cookie)
+        {
+            _snackName = "쿠키";
+            _snackPrice = 2500;
+            IsThisSale = false;
+        }
     }
 
     public override void CalPrice()

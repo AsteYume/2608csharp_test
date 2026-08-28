@@ -11,12 +11,11 @@ public class Drinks : Foods
 
     public ListDrinks Drink {get; protected set;}
     public bool IsThisSale {get; protected set;}
-    private static string _drinkName = "";
-    private static int _drinkPrice = 0;
-    
     
     private const int DRINK_SALE = 30;
     
+    private static string _drinkName = "";
+    private static int _drinkPrice = 0;
     
     public Drinks(ListDrinks drink) : base(_drinkName, _drinkPrice) 
     {
