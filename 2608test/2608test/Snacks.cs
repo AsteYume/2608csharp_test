@@ -8,6 +8,12 @@ public enum SnackList
     Candy
 }
 
+public enum SaleList
+{
+    Chips,
+    Chocolate
+}
+
 public class Snacks : Goods, ICanSale
 {
     public bool isThisSale {get; set;}

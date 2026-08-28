@@ -8,6 +8,12 @@ public enum DrinkList
     Coffee
 }
 
+public enum SaleList
+{
+    Coke,
+    Cider
+}
+
 
 public class Drinks : Goods, ICanSale
 {
@@ -17,4 +23,7 @@ public class Drinks : Goods, ICanSale
     {
         Drink = drink;
     }
+    
+    
+    
 }
