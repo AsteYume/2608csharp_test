@@ -2,5 +2,9 @@
 
 public interface ICanSale
 {
-    void Sale(int SaleRate);
+    public bool isThisSale {get; protected set;}
+    public int salePrice {get; protected set;}
+
+    public void CalSalePrice();
+
 }
