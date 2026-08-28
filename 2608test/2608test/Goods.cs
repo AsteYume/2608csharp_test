@@ -1,6 +1,6 @@
 ﻿namespace _2608test;
 
-public abstract class Foods : ICanSale
+public abstract class Goods
 {
     public const int SALE_RATE = 20;
     public string Name { get; protected set; }
@@ -10,7 +10,7 @@ public abstract class Foods : ICanSale
     public int salePrice {get; set;}
     
 
-    public Foods(string name, int price)
+    public Goods(string name, int price)
     {
         Name = name;
         BasePrice = price;

@@ -9,7 +9,7 @@ public enum DrinkList
 }
 
 
-public class Drinks : Foods
+public class Drinks : Goods, ICanSale
 {
     public DrinkList Drink { get; protected set; }
     

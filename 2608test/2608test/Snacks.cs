@@ -8,12 +8,15 @@ public enum SnackList
     Candy
 }
 
-public class Snacks : Foods
+public class Snacks : Goods, ICanSale
 {
+    public bool isThisSale {get; set;}
+    public int salePrice {get; set;}
     public SnackList Snack { get; protected set; }
     
     public Snacks(string name, int price, SnackList snack) : base(name, price)
     {
         Snack = snack;
     }
+    
 }

@@ -1,6 +1,6 @@
 ﻿namespace _2608test;
 
-public class ShoppingCart
+public class ShoppingCart<T> where T : Goods
 {
     
 }
