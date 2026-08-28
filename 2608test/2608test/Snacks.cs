@@ -14,39 +14,36 @@ public class Snacks : Foods
     
     private const int SNACK_SALE = 20;
     
-    private static string _snackName = "";
-    private static int _snackPrice = 0;
-    
-    public Snacks(ListSnacks snack) : base(_snackName, _snackPrice) 
+    public Snacks(ListSnacks snack)
     {
         Snack = snack;
         switch (snack)
         {
             case ListSnacks.Chips:
             {
-                _snackName = "감자칩";
-                _snackPrice = 2000;
+                Name = "감자칩";
+                BasePrice = 2000;
                 IsThisSale = true;
                 break;
             }
             case ListSnacks.Chocolate:
             {
-                _snackName = "초콜릿";
-                _snackPrice = 3000;
+                Name = "초콜릿";
+                BasePrice = 3000;
                 IsThisSale = true;
                 break;
             }
             case ListSnacks.Candy:
             {
-                _snackName = "사탕";
-                _snackPrice = 500;
+                Name = "사탕";
+                BasePrice = 500;
                 IsThisSale = false;
                 break;
             }
             case ListSnacks.Cookie:
             {
-                _snackName = "쿠키";
-                _snackPrice = 2500;
+                Name = "쿠키";
+                BasePrice = 2500;
                 IsThisSale = false;
                 break;
             }

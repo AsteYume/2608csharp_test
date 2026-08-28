@@ -7,7 +7,6 @@ class Program
     {
         bool isShopping = false;
         List<Goods> shop = new List<Goods>();
-        List<Goods> cart = new List<Goods>();
         
         shop.Add(new Drinks(Drinks.ListDrinks.Coke)); // 이거 열거형 불러와서 foreach 못넣나
         shop.Add(new Drinks(Drinks.ListDrinks.Cider));
@@ -20,13 +19,13 @@ class Program
         shop.Add(new Electronics(Electronics.ListElectronics.Cable));
         
         isShopping = true;
-        /*while (isShopping)
-        {*/
+        // while (isShopping)
+        {
             foreach (Goods goods in shop)
             {
                 goods.PrintInfo();
             }
-        //
+        }
 
 
     }

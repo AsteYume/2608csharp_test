@@ -14,27 +14,24 @@ public class Drinks : Foods
     
     private const int DRINK_SALE = 30;
     
-    private static string _drinkName = "";
-    private static int _drinkPrice = 0;
-    
-    public Drinks(ListDrinks drink) : base(_drinkName, _drinkPrice) 
+    public Drinks(ListDrinks drink)
     {
         Drink = drink;
         switch (drink)
         {
             case ListDrinks.Coke:
-                _drinkName = "콜라";
-                _drinkPrice = 1000;
+                Name = "콜라";
+                BasePrice = 1000;
                 IsThisSale = true; // 열거형 두개에서 이름 일치하나 비교하는법 없나
                 break;
             case ListDrinks.Cider:
-                _drinkName = "사이다";
-                _drinkPrice = 1000;
+                Name = "사이다";
+                BasePrice = 1000;
                 IsThisSale = true;
                 break;
             case ListDrinks.Coffee:
-                _drinkName = "커피";
-                _drinkPrice = 1500;
+                Name = "커피";
+                BasePrice = 1500;
                 IsThisSale = false;
                 break;
         }

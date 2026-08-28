@@ -6,10 +6,8 @@ public abstract class Foods : Goods
     public int BasePrice { get; set; }
     public int Price {get; set;}
     public int Count {get; set;}
-    public Foods(string name, int baseprice)
+    public Foods()
     {
-        Name = name;
-        BasePrice = baseprice;
         Count = 0;
     }
 
