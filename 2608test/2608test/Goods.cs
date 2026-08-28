@@ -7,9 +7,9 @@ public interface Goods
     protected int Price { get; set; }
     protected int Count { get; set; }
 
-    public void CalPrice();
-    public void AddGood();
-    public void RemoveGood();
+    public int CalPrice();
+    public void AddCount();
+    // public void RemoveCount();
     public void PrintMenu();
     public void PrintCart();
 

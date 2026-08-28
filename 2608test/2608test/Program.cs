@@ -5,91 +5,116 @@ class Program
     static void Main(string[] args)
     {
         int inCart = 0; // 카트에 몇개?
+        int finalPrice = 0;
+        int paiedPrice = 0;
+        int whatGoods;
+        bool isPaying = false;
         bool isShopping = false; // 쇼핑중
         const string SHOP_NAME = "행복마트 천호점";
-        ShoppingCart.
-            
+
         
+        GoodsStock<Goods> shop = new GoodsStock<Goods>();
+
+
         
-        shop.Add(new Drinks(Drinks.ListDrinks.Coke)); // 이거 열거형 불러와서 foreach 못넣나
-        shop.Add(new Drinks(Drinks.ListDrinks.Cider));
-        shop.Add(new Drinks(Drinks.ListDrinks.Coffee));
-        shop.Add(new Snacks(Snacks.ListSnacks.Chips));
-        shop.Add(new Snacks(Snacks.ListSnacks.Candy));
-        shop.Add(new Snacks(Snacks.ListSnacks.Chocolate));
-        shop.Add(new Snacks(Snacks.ListSnacks.Cookie));
-        shop.Add(new Electronics(Electronics.ListElectronics.CSubBattery));
-        shop.Add(new Electronics(Electronics.ListElectronics.Cable));
+        shop.NewGood(new Drinks(Drinks.ListDrinks.Coke));
+        shop.NewGood(new Drinks(Drinks.ListDrinks.Cider));
+        shop.NewGood(new Drinks(Drinks.ListDrinks.Coffee));
+        shop.NewGood(new Snacks(Snacks.ListSnacks.Chips));
+        shop.NewGood(new Snacks(Snacks.ListSnacks.Candy));
+        shop.NewGood(new Snacks(Snacks.ListSnacks.Chocolate));
+        shop.NewGood(new Snacks(Snacks.ListSnacks.Cookie));
+        shop.NewGood(new Electronics(Electronics.ListElectronics.CSubBattery));
+        shop.NewGood(new Electronics(Electronics.ListElectronics.Cable));
         
         isShopping = true;
-        // while (isShopping)
+        while (isShopping)
         {
             Console.Clear();
             ConsolePrint.PrintCutLine();
             ConsolePrint.PrintKiosk(SHOP_NAME);
             ConsolePrint.PrintCutLine();
-            ConsolePrint.PrintMenu("상품 목록");
-            foreach (Goods goods in shop)
-            {
-                goods.PrintMenu();
-            }
+            ConsolePrint.PrintTitle("상품 목록");
+            shop.PrintMenu();
             ConsolePrint.PrintCutLine();
             if (inCart != 0)
             {
-                ConsolePrint.PrintMenu("장바구니");
-                foreach (Goods goods in cart)
-                {
-                    goods.PrintCart();
-                }
+                ConsolePrint.PrintTitle("장바구니");
+                shop.PrintCarts();
                 ConsolePrint.PrintCutLine();
             }
 
-            int menuNumber = ConsoleInput.ReadIntInRange("1. 상품 추가   2. 상품 제거   3. 장바구니 비우기" +
-                                                         "   4. 결제   5. 종료\n", 1, 5);
+            int menuNumber = ConsoleInput.ReadIntInRange("1. 상품 추가   2. 장바구니 비우기" +
+                                                         "   3. 결제   4. 종료\n", 1, 4);
             switch (menuNumber)
             {
                 case 1:
                 {
-                    int whatGoods = ConsoleInput.ReadIntInRange
-                    ("1. 콜라   2. 사이다   3. 주스   4. 감자칩   5. 사탕   " +
-                     "6. 초콜릿   7. 쿠키   8. 배터리   9. 케이블", 1, 9);
-                    switch (whatGoods)
-                    {
-                        case 1:
-                        {
-                            cart.AddCart();
-                        }
-                        
-                        
-                        
-                        
-                    }
-
-
-
-
+                    whatGoods = ConsoleInput.ReadIntInRange
+                        ("상품 번호를 입력해주세요\n", 1, 9);
+                    shop.AddCart(whatGoods);
+                    inCart++;
                     break;
                 }
                 case 2:
                 {
+                    shop.ClearCart();
+                    inCart = 0;
+                    shop.NewGood(new Drinks(Drinks.ListDrinks.Coke));
+                    shop.NewGood(new Drinks(Drinks.ListDrinks.Cider));
+                    shop.NewGood(new Drinks(Drinks.ListDrinks.Coffee));
+                    shop.NewGood(new Snacks(Snacks.ListSnacks.Chips));
+                    shop.NewGood(new Snacks(Snacks.ListSnacks.Candy));
+                    shop.NewGood(new Snacks(Snacks.ListSnacks.Chocolate));
+                    shop.NewGood(new Snacks(Snacks.ListSnacks.Cookie));
+                    shop.NewGood(new Electronics(Electronics.ListElectronics.CSubBattery));
+                    shop.NewGood(new Electronics(Electronics.ListElectronics.Cable));
                     break;
                 }
                 case 3:
                 {
+                    finalPrice = shop.CalculatePrice();
+                    isPaying = finalPrice > 0 ? true : false;
+                    isShopping = false;
                     break;
                 }
                 case 4:
                 {
-                    break;
-                }
-                case 5:
-                {
+                    finalPrice = shop.CalculatePrice();
+                    isPaying = finalPrice > 0 ? true : false;
+                    isShopping = false;
                     break;
                 }
             }
-
         }
-
-
+        if (isPaying)
+        {
+            while (isPaying)
+            {
+                Console.Clear();
+                ConsolePrint.PrintCutLine();
+                ConsolePrint.PrintKiosk(SHOP_NAME);
+                ConsolePrint.PrintCutLine();
+                Console.WriteLine($"남은 결제 금액은 {finalPrice}원 입니다");
+                int paid = ConsoleInput.ReadIntAtLeast("금액을 넣어주세요 : ", 0);
+                finalPrice -= paid;
+                if (finalPrice == 0)
+                {
+                    isPaying = false;
+                }
+                else if (finalPrice < 0)
+                {
+                    ConsolePrint.PrintCutLine();
+                    finalPrice *= -1;
+                    Console.WriteLine($"거스름돈은 {finalPrice}원 입니다.");
+                    ConsolePrint.PrintCutLine();
+                    isPaying = false;
+                }
+            }
+            ConsolePrint.PrintCutLine();
+            Console.WriteLine("결제가 완료되었습니다.");
+        }
+        ConsolePrint.PrintCutLine();
+        Console.WriteLine("이용해주셔서 감사합니다");
     }
 }

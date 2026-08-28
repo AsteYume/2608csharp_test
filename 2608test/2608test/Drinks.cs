@@ -12,7 +12,7 @@ public class Drinks : Foods
     public ListDrinks Drink {get; protected set;}
     public bool IsThisSale {get; protected set;}
     
-    private const int DRINK_SALE = 30;
+    private const int DRINK_SALE = 10;
     
     public Drinks(ListDrinks drink)
     {
@@ -37,22 +37,29 @@ public class Drinks : Foods
         }
     }
 
-    public override void CalPrice()
+    public override int CalPrice()
     {
-        if (IsThisSale)
+        if (IsThisSale && Count >= 3)
         {
             Price = (BasePrice * (100-DRINK_SALE))/100;
         }
         else
         {
-            base.CalPrice();
+            Price = BasePrice;
         }
+        Price *= Count;
+        return Price;
     }
     public override void PrintMenu()
     {
-        Console.Write("음료 / ");
         Console.Write(Name + " ");
-        Console.WriteLine(BasePrice + "원 ");
+        Console.Write(BasePrice + "원 ");
+        Console.Write("/ 음료 ");
+        if (IsThisSale)
+        {
+            Console.Write($"[3개 이상 구매시 {DRINK_SALE}% 할인중]");
+        }
+        Console.WriteLine();
     }
     
 }

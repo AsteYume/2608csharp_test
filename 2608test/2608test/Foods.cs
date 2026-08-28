@@ -11,18 +11,20 @@ public abstract class Foods : Goods
         Count = 0;
     }
 
-    public virtual void CalPrice()
+    public virtual int CalPrice()
     {
         Price = BasePrice;
+        Price *= Count;
+        return Price;
     }
-    public void AddGood()
+    public void AddCount()
     {
         Count++;
     }
-    public void RemoveGood()
+    /*public void RemoveCount()
     {
         Count--;
-    }
+    }*/
 
     public abstract void PrintMenu();
     public void PrintCart()

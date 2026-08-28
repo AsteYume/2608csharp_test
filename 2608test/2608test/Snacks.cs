@@ -51,22 +51,29 @@ public class Snacks : Foods
         
     }
 
-    public override void CalPrice()
+    public override int CalPrice()
     {
-        if (IsThisSale)
+        if (IsThisSale&& Count >= 3)
         {
             Price = (BasePrice * (100-SNACK_SALE))/100;
         }
         else
         {
-            base.CalPrice();
+            Price = BasePrice;
         }
+        Price *= Count;
+        return Price;
     }
     public override void PrintMenu()
     {
-        Console.Write("과자 / ");
         Console.Write(Name + " ");
-        Console.WriteLine(BasePrice + "원 ");
+        Console.Write(BasePrice + "원 ");
+        Console.Write("/ 과자 ");
+        if (IsThisSale)
+        {
+            Console.Write($"[3개 이상 구매시 {SNACK_SALE}% 할인중]");
+        }
+        Console.WriteLine();
     }
     /*public ListSnacks ReutrnSnacks(int num)
     {

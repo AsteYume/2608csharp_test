@@ -7,7 +7,7 @@ public class ConsolePrint
         Console.WriteLine("========================================");
     }
 
-    public static void PrintMenu(string name)
+    public static void PrintTitle(string name)
     {
         Console.WriteLine("["+name+"]");
     }

@@ -34,24 +34,27 @@ public class Electronics : Goods
             }
         }
     }
-    public void CalPrice()
+    public int CalPrice()
     {
         Price = BasePrice;
+        Price *= Count;
+        return Price;
     }
-    public void AddGood()
+    public void AddCount()
     {
         Count++;
     }
-    public void RemoveGood()
+    /*public void RemoveCount()
     {
         Count--;
-    }
+    }*/
 
     public void PrintMenu()
     {
-        Console.Write("전자기기 / ");
         Console.Write(Name + " ");
-        Console.WriteLine(BasePrice + "원 ");
+        Console.Write(BasePrice + "원 ");
+        Console.WriteLine("/ 전자기기 ");
+        
     }
     public void PrintCart()
     {
