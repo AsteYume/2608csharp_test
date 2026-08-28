@@ -9,10 +9,19 @@ public class Drinks : Foods
         Juice,
         Coffee
     }
+
+    public DrinkList Drink {get; protected set;}
+
+    Drinks(string Name, int BasePrice) : base(Name, BasePrice)
+    {
+        
+    }
     
     
-    
-    
-    
-    
+
+
+
+
+
+
 }
