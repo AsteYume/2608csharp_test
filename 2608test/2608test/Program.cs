@@ -14,18 +14,8 @@ class Program
 
         
         GoodsStock<Goods> shop = new GoodsStock<Goods>();
-
-
         
-        shop.NewGood(new Drinks(Drinks.ListDrinks.Coke));
-        shop.NewGood(new Drinks(Drinks.ListDrinks.Cider));
-        shop.NewGood(new Drinks(Drinks.ListDrinks.Coffee));
-        shop.NewGood(new Snacks(Snacks.ListSnacks.Chips));
-        shop.NewGood(new Snacks(Snacks.ListSnacks.Candy));
-        shop.NewGood(new Snacks(Snacks.ListSnacks.Chocolate));
-        shop.NewGood(new Snacks(Snacks.ListSnacks.Cookie));
-        shop.NewGood(new Electronics(Electronics.ListElectronics.CSubBattery));
-        shop.NewGood(new Electronics(Electronics.ListElectronics.Cable));
+        shop.FillList();
         
         isShopping = true;
         while (isShopping)
@@ -60,15 +50,7 @@ class Program
                 {
                     shop.ClearCart();
                     inCart = 0;
-                    shop.NewGood(new Drinks(Drinks.ListDrinks.Coke));
-                    shop.NewGood(new Drinks(Drinks.ListDrinks.Cider));
-                    shop.NewGood(new Drinks(Drinks.ListDrinks.Coffee));
-                    shop.NewGood(new Snacks(Snacks.ListSnacks.Chips));
-                    shop.NewGood(new Snacks(Snacks.ListSnacks.Candy));
-                    shop.NewGood(new Snacks(Snacks.ListSnacks.Chocolate));
-                    shop.NewGood(new Snacks(Snacks.ListSnacks.Cookie));
-                    shop.NewGood(new Electronics(Electronics.ListElectronics.CSubBattery));
-                    shop.NewGood(new Electronics(Electronics.ListElectronics.Cable));
+                    shop.FillList();
                     break;
                 }
                 case 3:

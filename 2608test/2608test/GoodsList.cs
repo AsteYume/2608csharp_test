@@ -9,10 +9,10 @@ public class GoodsStock<T> where T : Goods
 
     
 
-    public void NewGood(T goods)
+    /*public void NewGood(T goods)
     {
         GoodsList.Add(goods);
-    }
+    }*/
 
     public void AddCart(int input)
     {
@@ -58,6 +58,19 @@ public class GoodsStock<T> where T : Goods
             sum += good.CalPrice();
         }
         return sum;
+    }
+
+    public void FillList()
+    {
+        GoodsList.Add(new Drinks(Drinks.ListDrinks.Coke));
+        GoodsList.Add(new Drinks(Drinks.ListDrinks.Cider));
+        GoodsList.Add(new Drinks(Drinks.ListDrinks.Coffee));
+        GoodsList.Add(new Snacks(Snacks.ListSnacks.Chips));
+        GoodsList.Add(new Snacks(Snacks.ListSnacks.Candy));
+        GoodsList.Add(new Snacks(Snacks.ListSnacks.Chocolate));
+        GoodsList.Add(new Snacks(Snacks.ListSnacks.Cookie));
+        GoodsList.Add(new Electronics(Electronics.ListElectronics.CSubBattery));
+        GoodsList.Add(new Electronics(Electronics.ListElectronics.Cable));
     }
     
 }

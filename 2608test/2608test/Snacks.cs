@@ -75,28 +75,4 @@ public class Snacks : Foods
         }
         Console.WriteLine();
     }
-    /*public ListSnacks ReutrnSnacks(int num)
-    {
-        switch (num)
-        {
-            case 1:
-            {
-                return ListSnacks.Chips;
-            }
-            case 2:
-            {
-                return ListSnacks.Chocolate;
-            }
-            case 3:
-            {
-                return ListSnacks.Candy;
-            }
-            case 4:
-            {
-                return ListSnacks.Cookie;
-            }
-        }
-
-        return ListSnacks.Chips;
-    }*/
 }
