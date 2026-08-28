@@ -4,7 +4,7 @@ public class Electronics : Goods
 {
     public enum ListElectronics
     {
-        CSubBattery,
+        CSubBattery = 1,
         Cable
     }
     public ListElectronics Electron {get; protected set;}
@@ -47,10 +47,33 @@ public class Electronics : Goods
         Count--;
     }
 
-    public void PrintInfo()
+    public void PrintMenu()
     {
         Console.Write("전자기기 / ");
         Console.Write(Name + " ");
         Console.WriteLine(BasePrice + "원 ");
     }
+    public void PrintCart()
+    {
+        if (Count == 0)
+            return;
+        Console.Write(Name + " ");
+        Console.WriteLine(Count + "개 ");
+    }
+    /*public ListElectronics ReutrnElectron(int num)
+    {
+        switch (num)
+        {
+            case 1:
+            {
+                return ListElectronics.CSubBattery;
+            }
+            case 2:
+            {
+                return ListElectronics.Cable;
+            }
+        }
+
+        return ListElectronics.CSubBattery;
+    }*/
 }

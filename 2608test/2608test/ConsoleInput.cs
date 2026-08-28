@@ -9,7 +9,7 @@ public class ConsoleInput
         while (true)  
         {  
             Console.Write(prompt);
-
+            
             string input = Console.ReadLine() + "";  
             input = input.Trim();
 

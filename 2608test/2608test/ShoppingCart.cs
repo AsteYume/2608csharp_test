@@ -1,30 +1,34 @@
 ﻿namespace _2608test;
 
-public class GoodsIndex<T> where T : Goods
+using System.Collections.Generic;
+public class GoodsList<T> where T : Goods
 {
-    public List<Goods> Shop = new List<Goods>();
+    
+    public static List<Goods> shop = new List<Goods>();
+    public List<Goods> cart = new List<Goods>();
+    
 
 
     public void AddCart(T goods)
     {
-        if (Shop.Contains(goods))
+        if (cart.Contains(goods))
         {
             goods.AddGood();
         }
         else
         {
-            Shop.Add(goods);
+            cart.Add(goods);
         }
     }
 
     public void RemoveCart(T goods)
     {
-        if (Shop.Contains(goods))
+        if (cart.Contains(goods))
         {
             goods.RemoveGood();
-            if (Shop.Count == 0)
+            if (cart.Count == 0)
             {
-                Shop.Remove(goods);
+                cart.Remove(goods);
             }
         }
         else

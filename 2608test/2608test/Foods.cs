@@ -24,6 +24,17 @@ public abstract class Foods : Goods
         Count--;
     }
 
-    public abstract void PrintInfo();
+    public abstract void PrintMenu();
+    public void PrintCart()
+    {
+        if (Count == 0)
+            return;
+        Console.Write(Name + " ");
+        Console.WriteLine(Count + "개 ");
+    }
 
+    public int ReturnCounts()
+    {
+        return Count;
+    }
 }

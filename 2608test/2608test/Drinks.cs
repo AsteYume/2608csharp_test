@@ -4,7 +4,7 @@ public class Drinks : Foods
 {
     public enum ListDrinks
     {
-        Coke,
+        Coke = 1,
         Cider,
         Coffee
     }
@@ -48,7 +48,7 @@ public class Drinks : Foods
             base.CalPrice();
         }
     }
-    public override void PrintInfo()
+    public override void PrintMenu()
     {
         Console.Write("음료 / ");
         Console.Write(Name + " ");

@@ -4,7 +4,7 @@ public class Snacks : Foods
 {
     public enum ListSnacks
     {
-        Chips,
+        Chips = 1,
         Chocolate,
         Candy,
         Cookie
@@ -62,10 +62,34 @@ public class Snacks : Foods
             base.CalPrice();
         }
     }
-    public override void PrintInfo()
+    public override void PrintMenu()
     {
         Console.Write("과자 / ");
         Console.Write(Name + " ");
         Console.WriteLine(BasePrice + "원 ");
     }
+    /*public ListSnacks ReutrnSnacks(int num)
+    {
+        switch (num)
+        {
+            case 1:
+            {
+                return ListSnacks.Chips;
+            }
+            case 2:
+            {
+                return ListSnacks.Chocolate;
+            }
+            case 3:
+            {
+                return ListSnacks.Candy;
+            }
+            case 4:
+            {
+                return ListSnacks.Cookie;
+            }
+        }
+
+        return ListSnacks.Chips;
+    }*/
 }
