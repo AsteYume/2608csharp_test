@@ -1,8 +1,8 @@
-﻿namespace _2608test;
+﻿// https://github.com/AsteYume/2608csharp_test
+namespace _2608test;
 
 class Program
 {
-    // https://github.com/AsteYume/2608csharp_test
     static void Main(string[] args)
     {
         int inCart = 0; // 카트에 몇개?
