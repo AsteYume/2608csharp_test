@@ -12,14 +12,6 @@ public class ShoppingCart<T> where T : Goods
 
     public void Remove(T goods)
     {
-        if (Cart.Contains(goods))
-        {
-            Cart.Remove(goods);
-        }
-        else
-        {
-            Console.WriteLine("장바구니에 해당 상품이 없습니다");
-        }
-
+        Cart.Remove(goods);
     }
 }
