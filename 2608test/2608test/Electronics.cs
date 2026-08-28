@@ -4,7 +4,7 @@ public class Electronics : Goods
 {
     public enum ListElectronics
     {
-        Battery,
+        CSubBattery,
         Cable
     }
     public ListElectronics Electron {get; protected set;}
@@ -13,13 +13,19 @@ public class Electronics : Goods
     public int BasePrice { get; set; }
     public int Price { get; set; }
     public int Count {get; set;}
-
-    public Electronics(string name, int baseprice, ListElectronics electron)
+    
+    public Electronics(ListElectronics electron)
     {
-        Name = name;
-        BasePrice = baseprice;
-        Electron = electron;
-        Count = 0;
+        if (electron == ListElectronics.CSubBattery)
+        {
+            Name = "보조배터리";
+            BasePrice = 3000;
+        }
+        else if (electron == ListElectronics.Cable)
+        {
+            Name = "충전케이블";
+            BasePrice = 2000;
+        }
     }
     public void CalPrice()
     {

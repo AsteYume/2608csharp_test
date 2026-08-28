@@ -20,7 +20,7 @@ public class Drinks : Foods
     public Drinks(ListDrinks drink) : base(_drinkName, _drinkPrice) 
     {
         Drink = drink;
-        if (drink == ListDrinks.Coke)
+        if (drink == ListDrinks.Coke) // switch 쓰는게 나았을듯
         {
             _drinkName = "콜라";
             _drinkPrice = 1000;

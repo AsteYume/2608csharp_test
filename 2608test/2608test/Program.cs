@@ -1,26 +1,29 @@
 ﻿namespace _2608test;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        List<Goods> cart = new List<Goods>();
+        bool isShopping = false;
         List<Goods> shop = new List<Goods>();
+        List<Goods> cart = new List<Goods>();
         
-        Drinks coke = new Drinks(Drinks.ListDrinks.Coke);
-        Drinks cider = new Drinks(Drinks.ListDrinks.Cider);
-        Drinks coffee = new Drinks(Drinks.ListDrinks.Coffee);
-        Snacks chips = new Snacks(Snacks.ListSnacks.Chips);
-        Snacks candy = new Snacks(Snacks.ListSnacks.Candy);
-        Snacks choco = new Snacks(Snacks.ListSnacks.Chocolate);
-        Snacks cookie = new Snacks(Snacks.ListSnacks.Cookie);
-        Electronics battery = new Electronics("배터리", 3000, Electronics.ListElectronics.Battery);
-        Electronics cable = new Electronics("케이블", 2000, Electronics.ListElectronics.Cable);
-
+        shop.Add(new Drinks(Drinks.ListDrinks.Coke)); // 이거 열거형 불러와서 foreach 못넣나
+        shop.Add(new Drinks(Drinks.ListDrinks.Cider));
+        shop.Add(new Drinks(Drinks.ListDrinks.Coffee));
+        shop.Add(new Snacks(Snacks.ListSnacks.Chips));
+        shop.Add(new Snacks(Snacks.ListSnacks.Candy));
+        shop.Add(new Snacks(Snacks.ListSnacks.Chocolate));
+        shop.Add(new Snacks(Snacks.ListSnacks.Cookie));
+        shop.Add(new Electronics(Electronics.ListElectronics.CSubBattery));
+        shop.Add(new Electronics(Electronics.ListElectronics.Cable));
         
-
-
-
+        isShopping = true;
+        while (isShopping)
+        {
+            
+        }
 
 
     }
