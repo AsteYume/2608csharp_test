@@ -33,4 +33,11 @@ public class Electronics : Goods
     {
         Count--;
     }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine("전자기기 / ");
+        Console.Write(Name + " ");
+        Console.Write(BasePrice + "원 ");
+    }
 }

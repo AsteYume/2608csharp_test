@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Goods> shop = new List<Goods>();
         List<Goods> cart = new List<Goods>();
         
         Drinks coke = new Drinks("콜라", 1000, Drinks.ListDrinks.Coke);
@@ -17,7 +16,8 @@ class Program
         Snacks cookie = new Snacks("쿠키",1500, Snacks.ListSnack.Cookie);
         Electronics battery = new Electronics("배터리", 3000, Electronics.ListElectronics.Battery);
         Electronics cable = new Electronics("케이블", 2000, Electronics.ListElectronics.Cable);
-
+        
+        
 
 
 

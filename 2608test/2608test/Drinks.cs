@@ -36,4 +36,11 @@ public class Drinks : Foods
             base.CalPrice();
         }
     }
+    public override void PrintInfo()
+    {
+        Console.WriteLine("음료 / ");
+        Console.Write(Name + " ");
+        Console.Write(BasePrice + "원 ");
+    }
+    
 }

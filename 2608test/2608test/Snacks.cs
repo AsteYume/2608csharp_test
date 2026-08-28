@@ -35,4 +35,10 @@ public class Snacks : Foods
             base.CalPrice();
         }
     }
+    public override void PrintInfo()
+    {
+        Console.WriteLine("과자 / ");
+        Console.Write(Name + " ");
+        Console.Write(BasePrice + "원 ");
+    }
 }

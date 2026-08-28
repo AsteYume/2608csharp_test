@@ -1,6 +1,6 @@
 ﻿namespace _2608test;
 
-public partial class GoodsIndex<T> where T : Goods
+public class GoodsIndex<T> where T : Goods
 {
     List<Goods> Cart = new List<Goods>();
 

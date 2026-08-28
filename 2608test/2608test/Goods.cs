@@ -10,4 +10,5 @@ public interface Goods
     public void CalPrice();
     public void AddGood();
     public void RemoveGood();
+    public void PrintInfo();
 }

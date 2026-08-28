@@ -25,5 +25,7 @@ public abstract class Foods : Goods
     {
         Count--;
     }
-    
+
+    public abstract void PrintInfo();
+
 }
