@@ -2,8 +2,9 @@
 
 public interface Goods
 {
-    public string Name {get; protected set;}
-    public int BasePrice {get; protected set;}
+    protected string Name { get; set; }
+    protected int BasePrice { get; set; }
+    protected int Price { get; set; }
 
     public void CalPrice();
 }
