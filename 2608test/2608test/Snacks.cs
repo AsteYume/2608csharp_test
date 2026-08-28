@@ -20,30 +20,38 @@ public class Snacks : Foods
     public Snacks(ListSnacks snack) : base(_snackName, _snackPrice) 
     {
         Snack = snack;
-        if (snack == ListSnacks.Chips)
+        switch (snack)
         {
-            _snackName = "감자칩";
-            _snackPrice = 2000;
-            IsThisSale = true;
+            case ListSnacks.Chips:
+            {
+                _snackName = "감자칩";
+                _snackPrice = 2000;
+                IsThisSale = true;
+                break;
+            }
+            case ListSnacks.Chocolate:
+            {
+                _snackName = "초콜릿";
+                _snackPrice = 3000;
+                IsThisSale = true;
+                break;
+            }
+            case ListSnacks.Candy:
+            {
+                _snackName = "사탕";
+                _snackPrice = 500;
+                IsThisSale = false;
+                break;
+            }
+            case ListSnacks.Cookie:
+            {
+                _snackName = "쿠키";
+                _snackPrice = 2500;
+                IsThisSale = false;
+                break;
+            }
         }
-        else if (snack == ListSnacks.Chocolate)
-        {
-            _snackName = "초콜릿";
-            _snackPrice = 3000;
-            IsThisSale = true;
-        }
-        else if (snack == ListSnacks.Candy)
-        {
-            _snackName = "사탕";
-            _snackPrice = 500;
-            IsThisSale = false;
-        }
-        else if (snack == ListSnacks.Cookie)
-        {
-            _snackName = "쿠키";
-            _snackPrice = 2500;
-            IsThisSale = false;
-        }
+        
     }
 
     public override void CalPrice()
@@ -59,8 +67,8 @@ public class Snacks : Foods
     }
     public override void PrintInfo()
     {
-        Console.WriteLine("과자 / ");
+        Console.Write("과자 / ");
         Console.Write(Name + " ");
-        Console.Write(BasePrice + "원 ");
+        Console.WriteLine(BasePrice + "원 ");
     }
 }

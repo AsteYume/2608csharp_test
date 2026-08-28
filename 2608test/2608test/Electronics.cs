@@ -16,15 +16,22 @@ public class Electronics : Goods
     
     public Electronics(ListElectronics electron)
     {
-        if (electron == ListElectronics.CSubBattery)
+        Electron = electron;
+        Count = 0;
+        switch (electron)
         {
-            Name = "보조배터리";
-            BasePrice = 3000;
-        }
-        else if (electron == ListElectronics.Cable)
-        {
-            Name = "충전케이블";
-            BasePrice = 2000;
+            case ListElectronics.CSubBattery:
+            {
+                Name = "보조배터리";
+                BasePrice = 3000;
+                break;
+            }
+            case ListElectronics.Cable:
+            {
+                Name = "충전케이블";
+                BasePrice = 2000;
+                break;
+            }
         }
     }
     public void CalPrice()
@@ -42,8 +49,8 @@ public class Electronics : Goods
 
     public void PrintInfo()
     {
-        Console.WriteLine("전자기기 / ");
+        Console.Write("전자기기 / ");
         Console.Write(Name + " ");
-        Console.Write(BasePrice + "원 ");
+        Console.WriteLine(BasePrice + "원 ");
     }
 }

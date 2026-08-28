@@ -20,23 +20,23 @@ public class Drinks : Foods
     public Drinks(ListDrinks drink) : base(_drinkName, _drinkPrice) 
     {
         Drink = drink;
-        if (drink == ListDrinks.Coke) // switch 쓰는게 나았을듯
+        switch (drink)
         {
-            _drinkName = "콜라";
-            _drinkPrice = 1000;
-            IsThisSale = true; // 열거형 두개에서 이름 일치하나 비교하는법 없나
-        }
-        else if (drink == ListDrinks.Cider)
-        {
-            _drinkName = "사이다";
-            _drinkPrice = 1000;
-            IsThisSale = true;
-        }
-        else if (drink == ListDrinks.Coffee)
-        {
-            _drinkName = "커피";
-            _drinkPrice = 1500;
-            IsThisSale = false;
+            case ListDrinks.Coke:
+                _drinkName = "콜라";
+                _drinkPrice = 1000;
+                IsThisSale = true; // 열거형 두개에서 이름 일치하나 비교하는법 없나
+                break;
+            case ListDrinks.Cider:
+                _drinkName = "사이다";
+                _drinkPrice = 1000;
+                IsThisSale = true;
+                break;
+            case ListDrinks.Coffee:
+                _drinkName = "커피";
+                _drinkPrice = 1500;
+                IsThisSale = false;
+                break;
         }
     }
 
@@ -53,9 +53,9 @@ public class Drinks : Foods
     }
     public override void PrintInfo()
     {
-        Console.WriteLine("음료 / ");
+        Console.Write("음료 / ");
         Console.Write(Name + " ");
-        Console.Write(BasePrice + "원 ");
+        Console.WriteLine(BasePrice + "원 ");
     }
     
 }

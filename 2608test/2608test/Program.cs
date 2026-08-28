@@ -20,10 +20,13 @@ class Program
         shop.Add(new Electronics(Electronics.ListElectronics.Cable));
         
         isShopping = true;
-        while (isShopping)
-        {
-            
-        }
+        /*while (isShopping)
+        {*/
+            foreach (Goods goods in shop)
+            {
+                goods.PrintInfo();
+            }
+        //
 
 
     }

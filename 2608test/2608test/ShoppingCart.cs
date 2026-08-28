@@ -2,29 +2,29 @@
 
 public class GoodsIndex<T> where T : Goods
 {
-    List<Goods> Cart = new List<Goods>();
+    public List<Goods> Shop = new List<Goods>();
 
 
     public void AddCart(T goods)
     {
-        if (Cart.Contains(goods))
+        if (Shop.Contains(goods))
         {
             goods.AddGood();
         }
         else
         {
-            Cart.Add(goods);
+            Shop.Add(goods);
         }
     }
 
     public void RemoveCart(T goods)
     {
-        if (Cart.Contains(goods))
+        if (Shop.Contains(goods))
         {
             goods.RemoveGood();
-            if (Cart.Count == 0)
+            if (Shop.Count == 0)
             {
-                Cart.Remove(goods);
+                Shop.Remove(goods);
             }
         }
         else
@@ -32,4 +32,5 @@ public class GoodsIndex<T> where T : Goods
             Console.WriteLine("장바구니에 없는 물건입니다");
         }
     }
+    
 }
