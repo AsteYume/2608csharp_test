@@ -8,7 +8,7 @@ class Program
         int finalPrice = 0;
         int paiedPrice = 0;
         int whatGoods;
-        bool isPaying = false;
+        bool isPaying = false; // 결제중
         bool isShopping = false; // 쇼핑중
         const string SHOP_NAME = "행복마트 천호점";
 
